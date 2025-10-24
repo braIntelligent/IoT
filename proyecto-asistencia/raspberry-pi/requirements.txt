@@ -1,0 +1,5 @@
+flask==3.0.0
+requests==2.31.0
+RPi.GPIO==0.7.1
+picamera2==0.3.16
+pillow==10.1.0

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Asistencia IoT</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📋 Sistema de Asistencia</h1>
+                <p class="subtitle">Control en Tiempo Real</p>
+            </div>
+            <div class="header-info">
+                <div class="info-card">
+                    <span class="label">Fecha:</span>
+                    <span id="fecha-actual" class="value">--</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Hora:</span>
+                    <span id="hora-actual" class="value">--</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Presentes:</span>
+                    <span id="total-presentes" class="value highlight">0</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Ausentes:</span>
+                    <span id="total-ausentes" class="value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Estado de conexión -->
+        <div id="conexion-status" class="conexion-status">
+            <span class="status-indicator"></span>
+            <span id="status-text">Conectando...</span>
+        </div>
+
+        <!-- Últimos registros -->
+        <section class="seccion">
+            <h2>🕐 Últimos Registros</h2>
+            <div id="ultimos-registros" class="ultimos-registros">
+                <p class="mensaje-vacio">Esperando registros...</p>
+            </div>
+        </section>
+
+        <!-- Lista de estudiantes -->
+        <section class="seccion">
+            <h2>👥 Lista de Asistencia</h2>
+            
+            <!-- Filtros -->
+            <div class="filtros">
+                <input 
+                    type="text" 
+                    id="buscar-estudiante" 
+                    class="input-buscar" 
+                    placeholder="🔍 Buscar estudiante..."
+                >
+                <div class="filtro-estado">
+                    <label>
+                        <input type="radio" name="filtro" value="todos" checked>
+                        Todos
+                    </label>
+                    <label>
+                        <input type="radio" name="filtro" value="presentes">
+                        Presentes
+                    </label>
+                    <label>
+                        <input type="radio" name="filtro" value="ausentes">
+                        Ausentes
+                    </label>
+                </div>
+            </div>
+
+            <!-- Tabla de asistencia -->
+            <div class="tabla-container">
+                <table id="tabla-asistencia">
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Nombre</th>
+                            <th>RUT</th>
+                            <th>Hora de Ingreso</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-estudiantes">
+                        <tr>
+                            <td colspan="4" class="mensaje-vacio">Cargando...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Sistema de Asistencia IoT v2.0 - Última actualización: <span id="ultima-actualizacion">--</span></p>
+        </footer>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
