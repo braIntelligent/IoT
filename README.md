@@ -92,18 +92,18 @@ Sistema IoT que automatiza el proceso de toma de asistencia en salas de clases m
 ┌─────────────────────┐         WiFi          ┌──────────────────────┐
 │   RASPBERRY PI      │ ────────────────────► │      SERVIDOR        │
 │   (Edge Device)     │   Frames (base64)     │   (Procesamiento)    │
-│                     │                        │                      │
+│                     │                       │                      │
 │ • Captura video     │ ◄──────────────────── │ • Face Recognition   │
 │ • Comprime frames   │   Comandos GPIO       │ • MySQL              │
-│ • Controla LEDs     │                        │ • Control LED remoto │
-└─────────────────────┘                        └───────────┬──────────┘
-         │                                                  │
-         │ GPIO                                             │ HTTP
-         ▼                                                  ▼
-    💚 LED Verde                                  ┌─────────────────┐
-    ❤️  LED Rojo                                  │  CLIENTE WEB    │
-                                                   │  (Dashboard)    │
-                                                   └─────────────────┘
+│ • Controla LEDs     │                       │ • Control LED remoto │
+└─────────────────────┘                       └───────────┬──────────┘
+         │                                                │
+         │ GPIO                                           │ HTTP
+         ▼                                                ▼
+    💚 LED Verde                                 ┌─────────────────┐
+    ❤️  LED Rojo                                 │  CLIENTE WEB    │
+                                                 │  (Dashboard)    │
+                                                 └─────────────────┘
 ```
 
 ### Flujo de Datos
